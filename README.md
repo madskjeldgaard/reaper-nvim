@@ -49,7 +49,7 @@ These are useful when writing scripts for reaper.
 
 ```lua
 -- Which fuzzy finder to use with reaper-nvim: Can be either "fzf" or "skim"
-vim.g.reaper_fuzzy_command or "fzf"
+vim.g.reaper_fuzzy_command = "fzf"
 
 -- Target port of the Reaper session receiving these osc messages
 vim.g.reaper_target_port = 1234
