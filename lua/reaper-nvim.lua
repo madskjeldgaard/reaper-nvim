@@ -3,7 +3,7 @@ local utils = require('reaper-nvim/utils')
 
 local M = {}
 
-function M.init()
+function M.setup()
 	require('reaper-nvim/commands')
 end
 
