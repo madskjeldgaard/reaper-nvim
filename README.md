@@ -14,6 +14,26 @@ This is useful when writing music in neovim or scripting for reaper in neovim.
 - fzf/skim
 - [osccli](https://github.com/madskjeldgaard/osccli)
 
+## Install
+To install using vim-plug
+1. Add this to your init.vim / .vimrc:
+`Plug 'madskjeldgaard/reaper-nvim'`
+2. Open Vim and run the command `:PlugInstall`
+
+# Usage
+
+To activate this plugin for all file types:
+```vimscript
+" Reaper
+autocmd filetype * lua require'reaper-nvim'.setup()
+```
+
+To activate this plugin for some file types:
+```vimscript
+" Reaper
+autocmd filetype supercollider,csound,lua lua require'reaper-nvim'.setup()
+```
+
 ## Commands
 
 ### Fuzzy action execution
