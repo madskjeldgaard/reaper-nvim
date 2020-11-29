@@ -24,9 +24,13 @@ Fuzzily choose between almost 4000 different Reaper Actions to execute from nvim
 
 ### Transport controls
 `:ReaPlay`
+
 `:ReaStop`
+
 `:ReaRecord`
+
 `:ReaGoToStart`
+
 `:ReaGoToEnd`
 
 ### Editing
@@ -36,5 +40,18 @@ Fuzzily choose between almost 4000 different Reaper Actions to execute from nvim
 These are useful when writing scripts for reaper.
 
 `:ReaRepeatLastAction`
+
 `:ReaRepeatActionPriorToLast`
+
 `:ReaRunLastScript`
+
+## Options
+
+```lua
+-- Which fuzzy finder to use with reaper-nvim: Can be either "fzf" or "skim"
+vim.g.reaper_fuzzy_command or "fzf"
+
+-- Target port of the Reaper session receiving these osc messages
+vim.g.reaper_target_port = 1234
+
+```
