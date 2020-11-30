@@ -23,6 +23,13 @@ function M.fuzzy_reaper_action()
 
 end
 
+function M.reaper_action_replay()
+	if vim.g.reaper_last_action ~= 0 then
+		local action_id = vim.g.reaper_last_action
+		utils.send_action_osc(action_id)
+	end
+end
+
 function M.toggle_play()
 	local action_num = 40044
 	utils.send_action_osc(action_num)

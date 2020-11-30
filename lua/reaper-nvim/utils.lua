@@ -1,5 +1,8 @@
+vim.g.reaper_last_action = 0
 local fuzzy_func = vim.g.reaper_fuzzy_command or "fzf"
 local target_port = vim.g.reaper_target_port or 1234
+local target_ip = vim.g.reaper_target_ip or "127.0.0.1"
+
 
 local M = {}
 
@@ -21,9 +24,13 @@ end
 
 -- Execute reaper action via OSC
 function M.send_action_osc(action_num)
+	vim.g.reaper_last_action = action_num
+
 	local argument = "/action"
 	local port = target_port
-	local cmd = string.format("osccli -a %s -m %s -p %s -t %s", argument, action_num, port, "int")
+	local ip = target_ip
+	local cmd = string.format("osccli -a %s -m %s -i %s -p %s -t %s", argument, action_num, ip, port, "int")
+
 	M.silent_shell(cmd)
 end
 

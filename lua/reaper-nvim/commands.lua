@@ -1,5 +1,6 @@
 -- Fuzzy find actions
 vim.cmd("command! ReaFuzz lua require('reaper-nvim').fuzzy_reaper_action()")
+vim.cmd("command! ReaReplay lua require('reaper-nvim').reaper_action_replay()")
 
 -- Transport
 vim.cmd("command! ReaPlay lua require('reaper-nvim').toggle_play()")

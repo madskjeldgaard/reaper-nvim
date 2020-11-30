@@ -42,6 +42,16 @@ autocmd filetype supercollider,csound,lua lua require'reaper-nvim'.setup()
 
 Fuzzily choose between almost 4000 different Reaper Actions to execute from nvim. Uses either fzf or skim
 
+
+### Replay last action
+
+![replay actions](/assets/replay-action.gif)
+
+Everytime you execute and send an action to Reaper, it's id is saved in the global variable `vim.g.reaper_last_action`.
+
+For convenience's sake, you can replay this latest action by executing:
+`:ReaReplay`
+
 ### Transport controls
 `:ReaPlay`
 
@@ -74,4 +84,6 @@ vim.g.reaper_fuzzy_command = "fzf"
 -- Target port of the Reaper session receiving these osc messages
 vim.g.reaper_target_port = 1234
 
+-- Target ip
+vim.g.reaper_target_ip = "127.0.0.1"
 ```
