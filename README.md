@@ -91,4 +91,7 @@ vim.g.reaper_target_port = 1234
 
 -- Target ip
 vim.g.reaper_target_ip = "127.0.0.1"
+
+-- Browser command used for opening links
+vim.g.reaper_browser_command = "firefox"
 ```
