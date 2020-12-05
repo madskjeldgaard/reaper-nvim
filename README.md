@@ -75,6 +75,11 @@ These are useful when writing scripts for reaper.
 
 `:ReaRunLastScript`
 
+### Fuzzy api search
+`:ReaAPI`
+
+This will open an api link in the browser defined in `vim.g.reaper_browser_command` (firefox by default)
+
 ## Options
 
 ```lua
