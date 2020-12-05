@@ -2,9 +2,14 @@ vim.g.reaper_last_action = 0
 local fuzzy_func = vim.g.reaper_fuzzy_command or "fzf"
 local target_port = vim.g.reaper_target_port or 1234
 local target_ip = vim.g.reaper_target_ip or "127.0.0.1"
-
+vim.g.reaper_browser_command = vim.g.reaper_browser_command or "firefox"
 
 local M = {}
+
+function M.open_url(url)
+	local command = vim.g.reaper_browser_command or "firefox"
+	M.silent_shell(string.format("%s %s", command, url))
+end
 
 function M.fzf(sources, sinkfunc, custom_options)
 	local cmd = fuzzy_func;

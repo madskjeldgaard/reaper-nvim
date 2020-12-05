@@ -82,4 +82,37 @@ function M.end_of_project()
 	utils.send_action_osc(action_num)
 end
 
+function M.reaper_urls()
+	local reaper_urls = require('reaper-nvim/urls')
+	local url_keys = {}
+
+	for k,_ in pairs(reaper_urls) do
+		table.insert(url_keys, k)
+	end
+
+	utils.fzf(url_keys, function(url)
+			local thisurl = reaper_urls[url]
+			utils.open_url(thisurl)
+			-- utils.send_action_osc(thisurl)
+		end
+	)
+end
+
+function M.reaper_api()
+	local reaper_urls = require('reaper-nvim/api-lua')
+	local url_keys = {}
+
+	for _,k in pairs(reaper_urls) do
+		table.insert(url_keys, k)
+	end
+
+	utils.fzf(url_keys, function(url)
+			-- Escaping the pound sign is needed otherwise vim will try to expand it
+			local thisurl = 'https://www.cockos.com/reaper/sdk/reascript/reascripthelp.html' .. '\\#' .. url
+			utils.open_url(thisurl)
+			-- utils.send_action_osc(thisurl)
+		end
+	)
+end
+
 return M

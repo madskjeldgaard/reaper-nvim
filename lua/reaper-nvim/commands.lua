@@ -16,3 +16,6 @@ vim.cmd("command! ReaUndo lua require('reaper-nvim').undo()")
 vim.cmd("command! ReaRepeatLastAction lua require('reaper-nvim').repeat_last_action()")
 vim.cmd("command! ReaRepeatActionPriorToLast lua require('reaper-nvim').repeat_action_prior_to_last()")
 vim.cmd("command! ReaRunLastScript lua require('reaper-nvim').run_last_script()")
+
+-- fuzzy api
+vim.cmd("command! ReaAPI lua require('reaper-nvim').reaper_api()")
