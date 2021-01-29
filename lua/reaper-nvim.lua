@@ -92,8 +92,9 @@ function M.reaper_urls()
 
 	utils.fzf(url_keys, function(url)
 			local thisurl = reaper_urls[url]
-			utils.open_url(thisurl)
-			-- utils.send_action_osc(thisurl)
+			if thisurl ~= nil then
+				utils.open_url(thisurl)
+			end
 		end
 	)
 end

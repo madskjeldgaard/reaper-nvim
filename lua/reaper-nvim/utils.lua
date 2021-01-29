@@ -32,15 +32,31 @@ function M.send_action_osc(action_num)
 	vim.g.reaper_last_action = action_num
 
 	local argument = "/action"
-	local port = target_port
-	local ip = target_ip
-	local cmd = string.format("osccli -a %s -m %s -i %s -p %s -t %s", argument, action_num, ip, port, "int")
-
-	M.silent_shell(cmd)
+	M.send_message(argument, action_num);
 end
 
 function M.silent_shell(cmd)
 	vim.cmd("silent exe '! " .. cmd .. " &'")
+end
+
+
+local osc = require'osc'.new{
+  transport = 'udp',
+  sendAddr = target_ip,
+  sendPort = target_port,
+}
+
+function M.send_message(address, command_num)
+	local message = osc.new_message{
+		address = address,
+		types = 'i',
+		command_num
+	}
+
+	local ok, err = osc:send(message)
+	if not ok then
+	print(err)
+	end
 end
 
 return M

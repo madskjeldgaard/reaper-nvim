@@ -12,12 +12,18 @@ This is useful when writing music in neovim or scripting for reaper in neovim.
 
 - nvim >= 0.5
 - fzf/skim
-- [osccli](https://github.com/madskjeldgaard/osccli)
+- [osc-nvim](https://github.com/davidgranstrom/osc.nvim)
 
 ## Install
 To install using vim-plug
 1. Add this to your init.vim / .vimrc:
-`Plug 'madskjeldgaard/reaper-nvim'`
+```vim
+" Reaper
+Plug 'madskjeldgaard/reaper-nvim'
+
+" OSC
+Plug 'davidgranstrom/osc.nvim'
+```
 2. Open Vim and run the command `:PlugInstall`
 
 # Usage
